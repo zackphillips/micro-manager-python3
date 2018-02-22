@@ -4,7 +4,7 @@ Files for running Micro-manager 2.0 with python 3.6 support
 # Installation
 0. Install [Micro-manager 2.0](https://micro-manager.org/wiki/Version_2.0) (a recent nightly should work)
 
-1. Download or clone the files inside the MMCorePy directory into your micro-manager directory (Usually C:\Program Files\Micro-Manager2.0beta\ or similar)
+1. Download or clone the files inside the MMCorePy directory into your micro-manager directory (Usually ```C:\Program Files\Micro-Manager2.0beta\``` or similar)
 
 2. Ensure you are running Python 3.6 (Using other verisons will NOT work as I have built this against python 3.6)
 
