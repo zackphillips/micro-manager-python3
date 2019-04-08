@@ -28,7 +28,12 @@ Then, append this line to the "Library Directories" box:
 ```
 
 6. Fix common erroes:
-- If you get an error related to "inttypes.h", open "pyport.h" and replace "inttypes.h" with "stdint.h". This means modifying a python header file to accomidate VS2017. I don't really like this solution, but it does seem to work, and does not mess up your python install.
+- If you get an error:
+```
+Error	C1083	Cannot open include file: 'inttypes.h': No such file or directory
+```
+Open "pyport.h" and replace "inttypes.h" with "stdint.h". This means modifying a python header file to accomidate VS2017. I don't really like this solution, but it does seem to work, and does not mess up your python install.
+
 - If you get an error: 
 ```
 Error	LNK1104	cannot open file 'python37_d.lib
