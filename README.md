@@ -39,7 +39,7 @@ Open "pyport.h" and replace "inttypes.h" with "stdint.h". This means modifying a
 Error	LNK1104	cannot open file 'python37_d.lib
 ```
 
-Ensure you are building the release build.
+Ensure you are building the release build. Note that the lib and include settings you updated above will need to be updated for the release configuration.
 
 7. Close the property browser, right-click MMCorePy_wrap, and click build.
 
