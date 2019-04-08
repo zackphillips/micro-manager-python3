@@ -27,7 +27,14 @@ Then, append this line to the "Library Directories" box:
 ;%PYTHONPATH%\libs;
 ```
 
-6. If you get an error related to "inttypes.h", open "pyport.h" and replace "inttypes.h" with "stdint.h". This means modifying a python header file to accomidate VS2017. I don't really like this solution, but it does seem to work, and does not mess up your python install.
+6. Fix common erroes:
+- If you get an error related to "inttypes.h", open "pyport.h" and replace "inttypes.h" with "stdint.h". This means modifying a python header file to accomidate VS2017. I don't really like this solution, but it does seem to work, and does not mess up your python install.
+- If you get an error: 
+```
+Error	LNK1104	cannot open file 'python37_d.lib
+```
+
+Ensure you are building the release build.
 
 7. Close the property browser, right-click MMCorePy_wrap, and click build.
 
