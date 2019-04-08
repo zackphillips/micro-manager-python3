@@ -4,28 +4,34 @@ Files for running Micro-manager 2.0 with python 3.X support on Windows
 # Compiling 
 0. Download [Anaconda](https://www.anaconda.com/download/) (or your preffered python distro)
 
-1. Check out micro-manager source from [https://github.com/micro-manager](https://github.com/micro-manager).
-
-2. Download [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/)
-
-3. Open Micro-manager.sln in Visual Studio Community 2017
-
-4. Right-click MMCorePy_wrap in the Solution Explorer and click "Properties". Select "VC++ Directories" in the right pane and append this line to the Include Directories box:
+1. Set PYTHONPATH environment variable to the location you installed anadonda
 
 ```
-;%HOMEPATH%\Anaconda3\include;%HOMEPATH%\Anaconda3\lib\site-packages\numpy\core\include
+set PYTHONPATH=%HOMEPATH%\anaconda\
+```
+
+2. Check out micro-manager source from [https://github.com/micro-manager](https://github.com/micro-manager).
+
+3. Download [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/)
+
+4. Open Micro-manager.sln in Visual Studio Community 2017
+
+5. Right-click MMCorePy_wrap in the Solution Explorer and click "Properties". Select "VC++ Directories" in the right pane and append this line to the Include Directories box:
+
+```
+;%PYTHONPATH%\include;%PYTHONPATH%\lib\site-packages\numpy\core\include
 ```
 
 Then, append this line to the "Library Directories" box:
 ```
-%HOMEPATH%\Anaconda3\libs;
+;%PYTHONPATH%\libs;
 ```
 
-5. If you get an error related to "inttypes.h", open "pyport.h" and replace "inttypes.h" with "stdint.h". This means modifying a python header file to accomidate VS2017. I don't really like this solution, but it does seem to work, and does not mess up your python install.
+6. If you get an error related to "inttypes.h", open "pyport.h" and replace "inttypes.h" with "stdint.h". This means modifying a python header file to accomidate VS2017. I don't really like this solution, but it does seem to work, and does not mess up your python install.
 
-6. Close the property browser, right-click MMCorePy_wrap, and click build.
+7. Close the property browser, right-click MMCorePy_wrap, and click build.
 
-7. Open the output directory and copy the files [TODO] to a recent Micro-manager nightly install, such as:
+8. Open the output directory and copy the files [TODO] to a recent Micro-manager nightly install, such as:
 ```
 C:\Program Files\Micro-Manager-2.0beta
 ```
