@@ -1,3 +1,7 @@
+# NOTE: Depricated Repository!
+Please use Pycro-manager instead for better support: [link](https://github.com/micro-manager/pycro-manager)
+This repository is no longer maintained.
+
 # micro-manager-py36
 Files for running Micro-manager 2.0 with python 3.X support on Windows
 
